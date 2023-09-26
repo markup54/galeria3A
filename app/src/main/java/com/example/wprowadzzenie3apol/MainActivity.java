@@ -30,7 +30,23 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        aktualny--;
+                        if(aktualny<0){
+                            aktualny = obrazki.size()-1;
+                        }
+                        obrazek.setImageResource(obrazki.get(aktualny));
+                    }
+                }
+        );
+        Button przyciskDalej = findViewById(R.id.button3);
+        przyciskDalej.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
                         aktualny++;
+                        if(aktualny==obrazki.size()){
+                            aktualny = 0;
+                        }
                         obrazek.setImageResource(obrazki.get(aktualny));
                     }
                 }
