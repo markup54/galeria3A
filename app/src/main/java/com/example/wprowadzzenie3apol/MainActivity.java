@@ -1,8 +1,10 @@
 package com.example.wprowadzzenie3apol;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,9 +19,17 @@ public class MainActivity extends AppCompatActivity {
     private int aktualny = 0;
 
     @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i("stan","metoda onSaveInstanceState zapisywanie danych");
+        outState.putInt("dane",aktualny);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         obrazki.add(R.drawable.kwiat);
         obrazki.add(R.drawable.obraz2);
         obrazki.add(R.drawable.obraz3);
@@ -29,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
         Button przyciskWstecz = findViewById(R.id.button2);
         EditText editText = findViewById(R.id.editTextNumber);
         Button przyciskWyboru = findViewById(R.id.button4);
-
+        if(savedInstanceState != null){
+            aktualny = savedInstanceState.getInt("dane");
+            obrazek.setImageResource(obrazki.get(aktualny));
+        }
         przyciskWyboru.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
