@@ -5,15 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private  boolean ukryty = false;
+    private boolean ukryty = false;
     private ArrayList<Integer> obrazki = new ArrayList<>();
-    private int aktualny = 0 ;
+    private int aktualny = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +27,29 @@ public class MainActivity extends AppCompatActivity {
         Button przycisk = findViewById(R.id.button);
         ImageView obrazek = findViewById(R.id.imageView);
         Button przyciskWstecz = findViewById(R.id.button2);
+        EditText editText = findViewById(R.id.editTextNumber);
+        Button przyciskWyboru = findViewById(R.id.button4);
+
+        przyciskWyboru.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        aktualny = Integer.valueOf(editText.getText().toString());
+                        if(aktualny<0 || aktualny>=obrazki.size()){
+                            aktualny =0;
+                            Toast.makeText(MainActivity.this, "Wpisano błędny numer obrazka", Toast.LENGTH_SHORT).show();
+                        }
+                        obrazek.setImageResource(obrazki.get(aktualny));
+                    }
+                }
+        );
         przyciskWstecz.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         aktualny--;
-                        if(aktualny<0){
-                            aktualny = obrazki.size()-1;
+                        if (aktualny < 0) {
+                            aktualny = obrazki.size() - 1;
                         }
                         obrazek.setImageResource(obrazki.get(aktualny));
                     }
@@ -44,27 +61,24 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         aktualny++;
-                        if(aktualny==obrazki.size()){
+                        if (aktualny == obrazki.size()) {
                             aktualny = 0;
                         }
                         obrazek.setImageResource(obrazki.get(aktualny));
                     }
                 }
         );
-
-
         przycisk.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(MainActivity.this, "Kliknięto przycisk", Toast.LENGTH_SHORT)
                                 .show();
-                        if(!ukryty) {
+                        if (!ukryty) {
                             obrazek.setVisibility(View.INVISIBLE);
                             przycisk.setText(R.string.opis_przycisku_pokaz);
                             ukryty = false;
-                        }
-                        else{
+                        } else {
                             obrazek.setVisibility(View.VISIBLE);
                             przycisk.setText(R.string.opis_przycisku_ukryj);
                             ukryty = true;

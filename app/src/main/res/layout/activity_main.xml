@@ -63,4 +63,26 @@
             android:text="@string/dalej" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Podaj numer obrazka" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="30"
+        android:inputType="number"
+        android:hint="0"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/opis_przycisku_pokaz"
+        android:backgroundTint="@color/kolor_przycisku"
+        android:layout_margin="@dimen/margines"/>
+
 </LinearLayout>
