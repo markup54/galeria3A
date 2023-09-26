@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margines"
+            android:layout_weight="1"
+            android:backgroundTint="@color/kolor_przycisku"
+            android:text="@string/wstecz" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/kwiat" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margines"
+            android:layout_weight="1"
+            android:backgroundTint="@color/kolor_przycisku"
+            android:text="@string/dalej" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/opis_zadania"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="#FF3456"/>
+    <!--
+    match_parent - dopasuj się do rodzica (do ekranu tu)
+    wrap_content - dopasuj do zawartości, zajmij tyle miejsca ile potrzebujesz
+    wysokość i szerokość w andoid studio obowiązkowa
+    -->
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margines"
+        android:layout_weight="2"
+        android:backgroundTint="@color/kolor_przycisku"
+        android:text="@string/opis_przycisku_ukryj" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Podaj numer obrazka" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="30"
+        android:inputType="number"
+        android:hint="0"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/opis_przycisku_pokaz"
+        android:backgroundTint="@color/kolor_przycisku"
+        android:layout_margin="@dimen/margines"/>
+
+</LinearLayout>
