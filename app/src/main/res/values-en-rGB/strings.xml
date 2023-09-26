@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wprowadzzenie3Apol</string>
+    <string name="opis_zadania">Click to tap or show picture</string>
+    <string name="opis_przycisku_ukryj">hide picture</string>
+    <string name="opis_przycisku_pokaz">show picture</string>
+</resources>

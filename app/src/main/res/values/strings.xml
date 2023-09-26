@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Wprowadzzenie3Apol</string>
+    <string name="opis_zadania">Kliknij poniżej żeby ukryć obraz</string>
+    <string name="opis_przycisku_ukryj">Ukryj obrazek</string>
+    <string name="opis_przycisku_pokaz">Pokaż obrazek</string>
+    <string name="wstecz">Wstecz</string>
+    <string name="dalej">dalej</string>
+</resources>
